@@ -93,7 +93,8 @@ echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER_NAME
 systemctl enable NetworkManager
 systemctl enable sshd
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+# --removable is CRITICAL for QEMU and easy booting
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 
 exit
