@@ -80,6 +80,7 @@ hwclock --systohc
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
 echo "$HOST_NAME" > /etc/hostname
 
 echo "root:$USER_PASS" | chpasswd
